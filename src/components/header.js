@@ -27,7 +27,7 @@ const Header = () => {
             text-align: center;
           `}
         >
-          GOAT
+          Greatest Of All Time
         </h1>
         <Nav />
       </div>
