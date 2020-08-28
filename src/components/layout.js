@@ -9,24 +9,24 @@ const Layout = props => {
       <Global
         styles={css`
           html {
-            font-size: 62.5;
+            font-size: 62.5%;
+            box-sizing: border-box;
           }
           body {
             font-size: 16px;
             font-size: 1.6 rem;
             line-height: 1.5;
+            font-family: 'PT Sans', sans-serif;
           }
           h1,
           h2,
           h3 {
             margin: 0;
+            line-height: 1.5;
           }
           h1,
           h2 {
             font-family: "Roboto", serif;
-          }
-          h3 {
-            font-family: "PT Sans", sans-serif;
           }
           ul {
             list-style: none;
