@@ -8,8 +8,30 @@ const Layout = props => {
     <>
       <Global
         styles={css`
+          html {
+            font-size: 62.5;
+          }
           body {
-            color: purple;
+            font-size: 16px;
+            font-size: 1.6 rem;
+            line-height: 1.5;
+          }
+          h1,
+          h2,
+          h3 {
+            margin: 0;
+          }
+          h1,
+          h2 {
+            font-family: "Roboto", serif;
+          }
+          h3 {
+            font-family: "PT Sans", sans-serif;
+          }
+          ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
           }
         `}
       />
