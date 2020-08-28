@@ -32,7 +32,7 @@ const Text = styled.div`
 const Image = () => {
   const { image } = useStaticQuery(graphql`
     query {
-      image: file(relativePath: { eq: "landing.jpg" }) {
+      image: file(relativePath: { eq: "home.jpg" }) {
         sharp: childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_withWebp
