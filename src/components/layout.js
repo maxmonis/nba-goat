@@ -3,8 +3,13 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 import { Global, css } from "@emotion/core"
 import Helmet from "react-helmet"
+import useSEO from "../hooks/use-seo"
 
 const Layout = props => {
+  const seo = useSEO()
+  const {
+    fallbackSeo: { description, title },
+  } = seo
   return (
     <>
       <Global
@@ -42,7 +47,8 @@ const Layout = props => {
         `}
       />
       <Helmet>
-        <title>GOAT</title>
+        <title>{title}</title>
+        <meta name="description" content={description} />
         <link
           href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
           rel="stylesheet"
