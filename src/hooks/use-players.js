@@ -16,7 +16,10 @@ const usePlayers = () => {
       }
     }
   `)
-  console.log(data)
+  return data.allDatoCmsPlayer.nodes.map(player => {
+    const { title, id, content, image, slug } = player
+    return { title, id, content, image, slug }
+  })
 }
 
 export default usePlayers
