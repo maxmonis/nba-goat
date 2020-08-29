@@ -39,7 +39,7 @@ const Preview = ({ player }) => {
           {title}
         </h3>
         <p>{content}</p>
-        <PageLink to={slug}>More about {title}...</PageLink>
+        <PageLink to={slug}>More about {title.split(" ")[0]}...</PageLink>
       </div>
     </div>
   )
