@@ -2,13 +2,21 @@ import React from "react"
 import { Link } from "gatsby"
 import { css } from "@emotion/core"
 import styled from "@emotion/styled"
-import Nav from "./nav"
+import NavLinks from "./nav"
 
 const Title = styled(Link)`
   color: #fff;
   text-align: center;
   text-decoration: none;
   font-size: 3rem;
+`
+
+const Nav = styled.nav`
+  display: flex;
+  justify-content: center;
+  @media (min-width: 768px) {
+    padding-left: 2rem;
+  }
 `
 
 const Header = () => (
@@ -29,8 +37,10 @@ const Header = () => (
         }
       `}
     >
-      <Title to="/">Greatest Of All Time</Title>
-      <Nav />
+      <Nav>
+        <Title to="/">Greatest Of All Time</Title>
+      </Nav>
+      <NavLinks />
     </div>
   </header>
 )

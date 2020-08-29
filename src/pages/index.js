@@ -31,7 +31,7 @@ const IndexPage = () => {
           font-size: 3rem;
         `}
       >
-        Best of the Best
+        The Candidates
       </h2>
       <List>
         {players.map(player => (

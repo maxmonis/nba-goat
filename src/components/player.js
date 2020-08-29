@@ -9,7 +9,7 @@ export const query = graphql`
     allDatoCmsPlayer(filter: { slug: { eq: $slug } }) {
       nodes {
         title
-        content
+        accolades
         image {
           fluid(maxWidth: 1200) {
             ...GatsbyDatoCmsFluid
@@ -25,7 +25,7 @@ const Player = ({
     allDatoCmsPlayer: { nodes },
   },
 }) => {
-  const { title, content, image } = nodes[0]
+  const { title, accolades, image } = nodes[0]
   return (
     <Layout>
       <main
@@ -47,7 +47,8 @@ const Player = ({
           {title}
         </h1>
         <Image fluid={image.fluid} />
-        <p>{content}</p>
+        <h2>Accolades</h2>
+        <p>{accolades}</p>
       </main>
     </Layout>
   )
