@@ -4,7 +4,7 @@ import Image from "gatsby-image"
 import { css } from "@emotion/core"
 import styled from "@emotion/styled"
 
-const PageLink = styled(Link)`
+const Button = styled(Link)`
   margin-top: 2rem;
   padding: 1rem;
   background-color: rgba(44, 62, 80, 0.85);
@@ -39,7 +39,7 @@ const Preview = ({ player }) => {
           {title}
         </h3>
         <p>{content}</p>
-        <PageLink to={slug}>More about {title.split(" ")[0]}...</PageLink>
+        <Button to={slug}>More about {title.split(" ")[0]}...</Button>
       </div>
     </div>
   )

@@ -27,6 +27,12 @@ const Text = styled.div`
       font-size: 6rem;
     }
   }
+  h3 {
+    font-size: 3rem;
+    @media (min-width: 768px) {
+      font-size: 4rem;
+    }
+  }
 `
 
 const Image = () => {
@@ -45,7 +51,7 @@ const Image = () => {
     <Background tag="section" fluid={image.sharp.fluid} fadeIn="soft">
       <Text>
         <h1>Who gets your GOAT vote?</h1>
-        <h3>Let's take a look at the candidates</h3>
+        <h3>A Deep Dive Into the Eternal Debate of Hoops Heads</h3>
       </Text>
     </Background>
   )

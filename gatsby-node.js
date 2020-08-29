@@ -16,7 +16,7 @@ exports.createPages = async ({ graphql, reporter, actions }) => {
     const { slug } = player
     actions.createPage({
       path: slug,
-      component: require.resolve("./src/components/players.js"),
+      component: require.resolve("./src/components/player.js"),
       context: {
         slug: slug,
       },

@@ -2,7 +2,7 @@ import React from "react"
 import Image from "gatsby-image"
 import { css } from "@emotion/core"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import Layout from "./layout"
 
 export const query = graphql`
   query($slug: String!) {
@@ -20,7 +20,7 @@ export const query = graphql`
   }
 `
 
-const Players = ({
+const Player = ({
   data: {
     allDatoCmsPlayer: { nodes },
   },
@@ -28,25 +28,29 @@ const Players = ({
   const { title, content, image } = nodes[0]
   return (
     <Layout>
-      <main>
-        <div
+      <main
+        css={css`
+          margin: 0 auto;
+          max-width: 1200px;
+          width: 95%;
+        `}
+      >
+        <h1
           css={css`
-            padding: 2rem;
+            font-size: 4rem;
+            text-align: center;
+            @media (min-width: 768px) {
+              font-size: 6rem;
+            }
           `}
         >
-          <Image fluid={image.fluid} />
-          <h3
-            css={css`
-              font-size: 3rem;
-            `}
-          >
-            {title}
-          </h3>
-          <p>{content}</p>
-        </div>
+          {title}
+        </h1>
+        <Image fluid={image.fluid} />
+        <p>{content}</p>
       </main>
     </Layout>
   )
 }
 
-export default Players
+export default Player
