@@ -5,6 +5,18 @@ import Home from "../components/home"
 import Preview from "../components/preview"
 import usePlayers from "../hooks/use-players"
 import { css } from "@emotion/core"
+import styled from "@emotion/styled"
+
+const List = styled.ul`
+  max-width: 1200px;
+  width: 95%;
+  margin: 4rem auto 0;
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3rem;
+  }
+`
 
 const IndexPage = () => {
   const players = usePlayers()
@@ -21,11 +33,11 @@ const IndexPage = () => {
       >
         Best of the Best
       </h2>
-      <ul>
+      <List>
         {players.map(player => (
           <Preview player={player} />
         ))}
-      </ul>
+      </List>
     </Layout>
   )
 }

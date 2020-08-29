@@ -12,11 +12,16 @@ const Layout = props => {
             font-size: 62.5%;
             box-sizing: border-box;
           }
+          *,
+          *:before,
+          *:after {
+            box-sizing: inherit;
+          }
           body {
             font-size: 16px;
             font-size: 1.6 rem;
             line-height: 1.5;
-            font-family: 'PT Sans', sans-serif;
+            font-family: "PT Sans", sans-serif;
           }
           h1,
           h2,
