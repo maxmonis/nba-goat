@@ -4,7 +4,7 @@ import BackgroundImage from "gatsby-background-image"
 import styled from "@emotion/styled"
 
 const Background = styled(BackgroundImage)`
-  height: 1000px;
+  width: 100%;
 `
 
 const Text = styled.div`
@@ -22,9 +22,15 @@ const Text = styled.div`
   justify-content: center;
   h1 {
     font-size: 4rem;
-    margin: 0 0 400px;
-    @media (min-width: 992px) {
+    margin-bottom: 350px;
+    @media (min-width: 768px) {
       font-size: 6rem;
+    }
+  }
+  h3 {
+    font-size: 3rem;
+    @media (min-width: 768px) {
+      font-size: 4rem;
     }
   }
 `
@@ -45,7 +51,7 @@ const Image = () => {
     <Background tag="section" fluid={image.sharp.fluid} fadeIn="soft">
       <Text>
         <h1>Who gets your GOAT vote?</h1>
-        <h3>Let's take a look at the candidates</h3>
+        <h3>A Deep Dive for Hoops Heads</h3>
       </Text>
     </Background>
   )

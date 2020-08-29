@@ -4,14 +4,16 @@ import Image from "gatsby-image"
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 
-const Text = styled.div`
-  padding-top: 3rem;
+const Container = styled.div`
+  padding-top: 1rem;
   max-width: 1200px;
   width: 95%;
   margin: 0 auto;
+  text-align: center;
   @media (min-width: 768px) {
+    padding-top: 3rem;
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 5fr 3fr;
     column-gap: 2rem;
   }
   p {
@@ -48,10 +50,18 @@ const Info = () => {
       >
         {title}
       </h2>
-      <Text>
-        <p>{content}</p>
+      <Container>
+        <p
+          css={css`
+            @media (min-width: 768px) {
+              font-size: 2rem;
+            }
+          `}
+        >
+          {content}
+        </p>
         <Image fluid={image.fluid} />
-      </Text>
+      </Container>
     </>
   )
 }
