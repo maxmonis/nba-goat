@@ -1,7 +1,25 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
-
-// You can delete this file if you're not using it
+exports.createPages = async ({ graphql, reporter, actions }) => {
+  const res = await graphql(`
+    query {
+      allDatoCmsPlayer {
+        nodes {
+          slug
+        }
+      }
+    }
+  `)
+  if (res.errors) {
+    reporter.panic("No results ", res.errors)
+  }
+  const players = res.data.allDatoCmsPlayer.nodes
+  for (const player of players) {
+    const { slug } = player
+    actions.createPage({
+      path: slug,
+      component: require.resolve("./src/components/players.js"),
+      context: {
+        slug: slug,
+      },
+    })
+  }
+}

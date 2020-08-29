@@ -1,10 +1,10 @@
 import React from "react"
+import { Link } from "gatsby"
 import Image from "gatsby-image"
 import { css } from "@emotion/core"
 import styled from "@emotion/styled"
-import { Link } from "gatsby"
 
-const Button = styled(Link)`
+const PageLink = styled(Link)`
   margin-top: 2rem;
   padding: 1rem;
   background-color: rgba(44, 62, 80, 0.85);
@@ -13,6 +13,7 @@ const Button = styled(Link)`
   display: block;
   text-decoration: none;
   font-weight: 700;
+  text-align: center;
 `
 
 const Preview = ({ player }) => {
@@ -24,12 +25,12 @@ const Preview = ({ player }) => {
         margin-bottom: 2rem;
       `}
     >
+      <Image fluid={image.fluid} />
       <div
         css={css`
           padding: 2rem;
         `}
       >
-        <Image fluid={image.fluid} />
         <h3
           css={css`
             font-size: 3rem;
@@ -38,7 +39,7 @@ const Preview = ({ player }) => {
           {title}
         </h3>
         <p>{content}</p>
-        <Button to={slug}>More about {title}...</Button>
+        <PageLink to={slug}>More about {title}...</PageLink>
       </div>
     </div>
   )

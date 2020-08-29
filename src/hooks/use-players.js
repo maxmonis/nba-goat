@@ -6,6 +6,8 @@ const usePlayers = () => {
       allDatoCmsPlayer {
         nodes {
           title
+          id
+          slug
           content
           image {
             fluid(maxWidth: 1200) {
