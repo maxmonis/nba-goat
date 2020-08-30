@@ -5,11 +5,13 @@ const usePlayers = () => {
     query {
       allDatoCmsPlayer {
         nodes {
-          title
+          name
           id
           slug
-          content
+          blurb
+          stats
           accolades
+          bio
           image {
             fluid(maxWidth: 1200) {
               ...GatsbyDatoCmsFluid
@@ -20,8 +22,8 @@ const usePlayers = () => {
     }
   `)
   return data.allDatoCmsPlayer.nodes.map(player => {
-    const { title, id, content, image, slug, accolades } = player
-    return { title, id, content, image, slug, accolades }
+    const { name, id, blurb, stats, image, slug, accolades, bio } = player
+    return { name, id, blurb, stats, image, slug, accolades, bio }
   })
 }
 

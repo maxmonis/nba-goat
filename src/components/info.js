@@ -53,7 +53,7 @@ const Info = () => {
       <Container>
         <p
           css={css`
-            @media (min-width: 768px) {
+            @media (min-width: 992px) {
               font-size: 2rem;
             }
           `}
@@ -62,6 +62,13 @@ const Info = () => {
         </p>
         <Image fluid={image.fluid} />
       </Container>
+      <div
+        css={css`
+          @media (min-width: 768px) {
+            height: 20rem;
+          }
+        `}
+      />
     </>
   )
 }

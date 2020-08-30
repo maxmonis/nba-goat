@@ -8,8 +8,10 @@ export const query = graphql`
   query($slug: String!) {
     allDatoCmsPlayer(filter: { slug: { eq: $slug } }) {
       nodes {
-        title
+        name
         accolades
+        bio
+        stats
         image {
           fluid(maxWidth: 1200) {
             ...GatsbyDatoCmsFluid
@@ -25,7 +27,7 @@ const Player = ({
     allDatoCmsPlayer: { nodes },
   },
 }) => {
-  const { title, accolades, image } = nodes[0]
+  const { name, accolades, bio, stats, image } = nodes[0]
   return (
     <Layout>
       <main
@@ -33,22 +35,37 @@ const Player = ({
           margin: 0 auto;
           max-width: 1200px;
           width: 95%;
-        `}
-      >
-        <h1
-          css={css`
+          text-align: center;
+          h1 {
             font-size: 4rem;
-            text-align: center;
             @media (min-width: 768px) {
               font-size: 6rem;
             }
-          `}
-        >
-          {title}
-        </h1>
+          }
+          h2 {
+            margin: 2rem 0;
+            font-size: 3rem;
+            @media (min-width: 768px) {
+              font-size: 5rem;
+            }
+          }
+          p {
+            padding: 0 10%;
+          }
+          a {
+            font-size: 2rem;
+          }
+        `}
+      >
+        <h1>{name}</h1>
         <Image fluid={image.fluid} />
         <h2>Accolades</h2>
         <p>{accolades}</p>
+        <h2>Biography</h2>
+        <p>{bio}</p>
+        <a href={stats} target="_blank" rel="noreferrer">
+          View Statistics on Basketball Reference
+        </a>
       </main>
     </Layout>
   )
