@@ -10,6 +10,7 @@ const usePlayers = () => {
           slug
           content
           accolades
+          bio
           image {
             fluid(maxWidth: 1200) {
               ...GatsbyDatoCmsFluid
@@ -20,8 +21,8 @@ const usePlayers = () => {
     }
   `)
   return data.allDatoCmsPlayer.nodes.map(player => {
-    const { title, id, content, image, slug, accolades } = player
-    return { title, id, content, image, slug, accolades }
+    const { title, id, content, image, slug, accolades, bio } = player
+    return { title, id, content, image, slug, accolades, bio }
   })
 }
 
