@@ -9,6 +9,7 @@ const usePlayers = () => {
           id
           slug
           blurb
+          stats
           accolades
           bio
           image {
@@ -21,8 +22,8 @@ const usePlayers = () => {
     }
   `)
   return data.allDatoCmsPlayer.nodes.map(player => {
-    const { name, id, blurb, image, slug, accolades, bio } = player
-    return { name, id, blurb, image, slug, accolades, bio }
+    const { name, id, blurb, stats, image, slug, accolades, bio } = player
+    return { name, id, blurb, stats, image, slug, accolades, bio }
   })
 }
 

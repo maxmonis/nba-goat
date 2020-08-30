@@ -11,6 +11,7 @@ export const query = graphql`
         name
         accolades
         bio
+        stats
         image {
           fluid(maxWidth: 1200) {
             ...GatsbyDatoCmsFluid
@@ -26,7 +27,7 @@ const Player = ({
     allDatoCmsPlayer: { nodes },
   },
 }) => {
-  const { name, accolades,bio, image } = nodes[0]
+  const { name, accolades, bio, stats, image } = nodes[0]
   return (
     <Layout>
       <main
@@ -51,6 +52,9 @@ const Player = ({
           p {
             padding: 0 10%;
           }
+          a {
+            font-size: 2rem;
+          }
         `}
       >
         <h1>{name}</h1>
@@ -59,6 +63,9 @@ const Player = ({
         <p>{accolades}</p>
         <h2>Biography</h2>
         <p>{bio}</p>
+        <a href={stats} target="_blank">
+          View Statistics on Basketball Reference
+        </a>
       </main>
     </Layout>
   )
