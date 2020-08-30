@@ -17,7 +17,7 @@ const Button = styled(Link)`
 `
 
 const Preview = ({ player }) => {
-  const { title, content, image, slug } = player
+  const { name, blurb, image, slug } = player
   return (
     <div
       css={css`
@@ -36,10 +36,10 @@ const Preview = ({ player }) => {
             font-size: 3rem;
           `}
         >
-          {title}
+          {name}
         </h3>
-        <p>{content}</p>
-        <Button to={slug}>More about {title.split(" ")[0]}...</Button>
+        <p>{blurb}</p>
+        <Button to={slug}>More about {name.split(" ")[0]}...</Button>
       </div>
     </div>
   )

@@ -5,10 +5,10 @@ const usePlayers = () => {
     query {
       allDatoCmsPlayer {
         nodes {
-          title
+          name
           id
           slug
-          content
+          blurb
           accolades
           bio
           image {
@@ -21,8 +21,8 @@ const usePlayers = () => {
     }
   `)
   return data.allDatoCmsPlayer.nodes.map(player => {
-    const { title, id, content, image, slug, accolades, bio } = player
-    return { title, id, content, image, slug, accolades, bio }
+    const { name, id, blurb, image, slug, accolades, bio } = player
+    return { name, id, blurb, image, slug, accolades, bio }
   })
 }
 
