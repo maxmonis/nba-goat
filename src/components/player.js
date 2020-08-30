@@ -63,7 +63,7 @@ const Player = ({
         <p>{accolades}</p>
         <h2>Biography</h2>
         <p>{bio}</p>
-        <a href={stats} target="_blank">
+        <a href={stats} target="_blank" rel="noreferrer">
           View Statistics on Basketball Reference
         </a>
       </main>
