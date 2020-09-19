@@ -1,8 +1,12 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `NBA GOAT`,
+    description: `Comparison of NBA Greats`,
+    author: `Max Monis <mmonis77@gmail.com>`,
   },
   plugins: [
     `gatsby-plugin-emotion`,
@@ -31,7 +35,7 @@ module.exports = {
     {
       resolve: `gatsby-source-datocms`,
       options: {
-        apiToken: "237b03e8a4125171027058efd4c7eb",
+        apiToken: process.env.API_TOKEN,
       },
     },
   ],
