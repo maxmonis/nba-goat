@@ -16,6 +16,7 @@ const Container = styled.div`
   }
   p {
     line-height: 2;
+    padding: 0 2rem;
   }
 `
 

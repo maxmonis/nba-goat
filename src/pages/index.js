@@ -34,8 +34,8 @@ const IndexPage = () => {
         The Candidates
       </h2>
       <List>
-        {players.map(player => (
-          <Preview player={player} />
+        {players.map((player, i) => (
+          <Preview player={player} key={i} />
         ))}
       </List>
     </Layout>
