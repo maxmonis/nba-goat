@@ -51,6 +51,9 @@ const Player = ({
           }
           p {
             padding: 0 10%;
+            &.bio {
+              text-align: left;
+            }
           }
           a {
             font-size: 2rem;
@@ -62,7 +65,11 @@ const Player = ({
         <h2>Accolades</h2>
         <p>{accolades}</p>
         <h2>Biography</h2>
-        <p>{bio}</p>
+        {bio.split(/\r|\n/).map((paragraph, i) => (
+          <p className="bio" key={i}>
+            {paragraph}
+          </p>
+        ))}
         <a href={stats} target="_blank" rel="noreferrer">
           View Statistics on Basketball Reference
         </a>
