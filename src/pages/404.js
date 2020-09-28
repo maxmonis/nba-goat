@@ -1,10 +1,18 @@
 import React from "react"
+import { Link } from "gatsby"
 import Layout from "../components/layout"
+import { css } from "@emotion/core"
 
 const NotFoundPage = () => (
   <Layout>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <div
+      css={css`
+        text-align: center;
+      `}
+    >
+      <h1>404: NOT FOUND</h1>
+      <Link to="/">Return home</Link>
+    </div>
   </Layout>
 )
 

@@ -5,6 +5,7 @@ const Footer = () => (
   <div
     css={css`
       text-align: center;
+      height: 20px;
     `}
   >
     <h4>© Max Monis {new Date().getFullYear()}</h4>

@@ -59,7 +59,14 @@ const Layout = props => {
         />
       </Helmet>
       <Header />
-      {props.children}
+      <div
+        css={css`
+          min-height: 100vh;
+          padding-bottom: 20px;
+        `}
+      >
+        {props.children}
+      </div>
       <Footer />
     </>
   )
